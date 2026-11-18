@@ -1,0 +1,341 @@
+﻿<!-- Edu_AI - O'quvchi paneli -->
+<!DOCTYPE html><html class="light" lang="uz" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Student Dashboard - Edu_AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-primary-fixed-variant": "#0a4396", "surface-variant": "#e2e2e9", "surface-container": "#ededf5", "secondary-fixed": "#d9e2ff", "on-surface-variant": "#434752", "tertiary-fixed": "#ffdf9d", "on-primary": "#ffffff", "surface-container-high": "#e8e7ef", "on-tertiary-fixed": "#251a00", "on-primary-fixed": "#001944", "on-error-container": "#93000a", "secondary-fixed-dim": "#b8c6ed", "surface-container-low": "#f3f3fb", "on-primary-container": "#002964", "primary-container": "#6991e8", "on-secondary-container": "#4f5d7f", "tertiary-fixed-dim": "#f3bf40", "on-tertiary-container": "#3a2900", "on-tertiary": "#ffffff", "surface-tint": "#2f5baf", "on-surface": "#1a1b21", background: "#faf8ff", "on-secondary-fixed-variant": "#384667", "primary-fixed": "#d9e2ff", tertiary: "#785a00", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#f0f0f8", "surface-bright": "#faf8ff", primary: "#2f5baf", outline: "#737783", "on-tertiary-fixed-variant": "#5b4300", "on-background": "#1a1b21", "primary-fixed-dim": "#afc6ff", "on-secondary-fixed": "#0b1b39", surface: "#faf8ff", "error-container": "#ffdad6", "inverse-surface": "#2f3036", "outline-variant": "#c3c6d3", "surface-container-highest": "#e2e2e9", "surface-dim": "#d9d9e1", "on-secondary": "#ffffff", secondary: "#505e80", "on-error": "#ffffff", error: "#ba1a1a", "tertiary-container": "#ba8c00", "secondary-container": "#c9d7fe", "inverse-primary": "#afc6ff"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"container-max": "1280px", "margin-desktop": "32px", base: "8px", "margin-mobile": "16px", gutter: "24px"}, fontFamily: {"headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-lg-mobile": ["28px", {lineHeight: "36px", fontWeight: "700"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "20px", fontWeight: "600"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}};</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="flex bg-background min-h-screen">
+<!-- SideNavBar -->
+<nav class="dark:bg-on-background shadow-md hidden lg:flex flex-col h-screen w-72 p-6 gap-2 sticky top-0 shrink-0 bg-surface border-r border-outline-variant/30">
+    <div class="flex items-center gap-3 px-2 mb-8">
+        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-on-primary">school</span>
+        </div>
+        <div>
+            <h2 class="font-headline-sm text-lg font-bold text-on-surface">Edu_AI</h2>
+            <p class="font-label-md text-xs text-on-surface-variant">O'quvchi paneli</p>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-1">
+        <a class="flex items-center gap-3 bg-primary/10 text-primary rounded-xl p-3 px-4 transition-all" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="font-label-lg">Bosh sahifa</span>
+        </a>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-xl p-3 px-4 transition-all" href="#">
+            <span class="material-symbols-outlined">school</span>
+            <span class="font-label-lg">Mening kurslarim</span>
+        </a>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-xl p-3 px-4 transition-all" href="#">
+            <span class="material-symbols-outlined">psychology</span>
+            <span class="font-label-lg">O'quv yo'li</span>
+        </a>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-xl p-3 px-4 transition-all" href="#">
+            <span class="material-symbols-outlined">assessment</span>
+            <span class="font-label-lg">Natijalarim</span>
+        </a>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container rounded-xl p-3 px-4 transition-all" href="#">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-label-lg">Sozlamalar</span>
+        </a>
+    </div>
+
+    <div class="mt-auto flex flex-col gap-4">
+        <button class="bg-primary text-on-primary font-label-lg py-3 rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all w-full flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">bolt</span>
+            AI O'qituvchi
+        </button>
+        
+        <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-2xl border border-outline-variant/30">
+            <img alt="Aziza profile" class="w-10 h-10 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfo4il4loqjcbudlzT2Wrh1dNu3QDs_qdxFsZwmVlPl4mSFngoHvyzz6nsvuuNaGxLzz6FjbONsOk0u6GUy_VkOB5QYgeOvK0iuOdbyn3N9Y10EC-g2Eo-EWpdbtxC2WpAl2Ua7WylI7zC7vUvVBN7aJCxyHO5RRH2oeOn9e-8VhQOqs7UzbaY_iiMQj5kGqm6XoMkB2ueAnT4Z59BQCti_ZPOJWAYjLHgiEjmUiTUfVp1uqOUS9Xu4xOmafEwPwvIBdt5n48qYEI">
+            <div class="overflow-hidden">
+                <h2 class="font-label-lg text-sm font-bold text-on-surface truncate">Aziza</h2>
+                <p class="font-body-sm text-xs text-on-surface-variant truncate">Talaba</p>
+            </div>
+            <button class="ml-auto text-on-surface-variant hover:text-on-surface">
+                <span class="material-symbols-outlined text-[20px]">logout</span>
+            </button>
+        </div>
+    </div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar with Search -->
+<!-- Main Canvas -->
+<main class="md:p-margin-desktop max-w-container-max mx-auto w-full flex-1 flex flex-col gap-8 p-margin-desktop max-w-none">
+<!-- Dashboard Header & Stats Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Welcome & AI Mentor -->
+<div class="md:col-span-2 bg-gradient-to-br rounded-2xl p-6 shadow-sm flex flex-col justify-between border border-outline-variant/30 relative overflow-hidden group hover:shadow-md transition-shadow duration-200 from-primary to-primary-container text-on-primary">
+<div class="relative z-10">
+<h1 class="font-headline-lg-mobile md:font-headline-lg mb-2 text-on-primary">Salom, Aziza! рџ‘‹</h1>
+<p class="font-body-lg mb-6 text-primary-fixed-dim">Sizning o'quv olamingiz sizni kutmoqda.</p>
+<div class="bg-surface/80 backdrop-blur-sm p-4 rounded-xl border border-primary/10 flex items-start gap-4">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-lg shrink-0">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Bugun nima o'rganamiz?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Sizning keyingi darsingiz "UX Design Fundamentals" da kutmoqda. Davom etamizmi?</p>
+<button class="mt-3 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-tint transition-transform transform hover:scale-105 inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+                                    Davom etish
+                                </button>
+</div>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-colors duration-500"></div>
+</div>
+<!-- Stats Pillar -->
+<div class="flex flex-col gap-4">
+<!-- O'zlashtirish ballari (Learning Points) -->
+<div class="bg-surface rounded-2xl p-5 shadow-sm border border-outline-variant/30 flex-1 hover:-translate-y-1 transition-transform duration-200">
+<div class="flex items-center gap-3 mb-2">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">O'zlashtirish ballari</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-primary">850</span>
+<span class="font-body-md text-body-md text-outline">ball</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 mt-4">
+<div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<!-- To'plangan tajriba (Experience earned) -->
+<div class="bg-surface rounded-2xl p-5 shadow-sm border border-outline-variant/30 flex-1 hover:-translate-y-1 transition-transform duration-200">
+<div class="flex items-center gap-3 mb-2">
+<div class="bg-tertiary-container text-on-tertiary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">To'plangan tajriba</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-tertiary">12</span>
+<span class="font-body-md text-body-md text-outline">daraja</span>
+</div>
+<div class="mt-3 flex gap-2">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-xs">
+<span class="material-symbols-outlined text-[14px] mr-1">local_fire_department</span>
+                                3 kunlik seriya
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Categories Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Kurs turlari</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<a class="bg-surface rounded-xl p-4 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 hover:bg-surface-container-low transition-colors shadow-sm" href="#">
+<div class="bg-primary-container text-on-primary-container p-3 rounded-full">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Dasturlash</span>
+</a>
+<a class="bg-surface rounded-xl p-4 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 hover:bg-surface-container-low transition-colors shadow-sm" href="#">
+<div class="bg-secondary-container text-on-secondary-container p-3 rounded-full">
+<span class="material-symbols-outlined">brush</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Dizayn</span>
+</a>
+<a class="bg-surface rounded-xl p-4 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 hover:bg-surface-container-low transition-colors shadow-sm" href="#">
+<div class="bg-tertiary-container text-on-tertiary-container p-3 rounded-full">
+<span class="material-symbols-outlined">business_center</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Biznes</span>
+</a>
+<a class="bg-surface rounded-xl p-4 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 hover:bg-surface-container-low transition-colors shadow-sm" href="#">
+<div class="bg-error-container text-on-error-container p-3 rounded-full">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Marketing</span>
+</a>
+<a class="bg-surface rounded-xl p-4 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 hover:bg-surface-container-low transition-colors shadow-sm" href="#">
+<div class="bg-surface-variant text-on-surface-variant p-3 rounded-full">
+<span class="material-symbols-outlined">language</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Tillar</span>
+</a>
+<a class="bg-surface rounded-xl p-4 flex flex-col items-center justify-center gap-3 border border-outline-variant/30 hover:bg-surface-container-low transition-colors shadow-sm" href="#">
+<div class="bg-primary-fixed-dim text-on-primary-fixed p-3 rounded-full">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Shaxsiy rivojlanish</span>
+</a>
+</div>
+</section>
+<!-- Current Courses Section -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Faol Kurslar</h2>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">Barchasini ko'rish</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Course Card 1 -->
+<div class="bg-surface rounded-2xl overflow-hidden shadow-sm border-t-4 border-t-[#8a4cfc] border border-outline-variant/30 hover:shadow-md transition-shadow duration-200 flex flex-col group">
+<div class="p-6 flex-1">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-secondary/10 text-secondary p-2 rounded-lg">
+<span class="material-symbols-outlined">brush</span>
+</div>
+<span class="font-label-md text-xs text-on-surface-variant bg-surface-container py-1 px-2 rounded">Kreativ</span>
+</div>
+<h3 class="font-headline-md text-lg text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">UI/UX Design Fundamentals</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-6">Foydalanuvchi interfeysi va tajribasi dizayni tamoyillarini o'rganing.</p>
+<div>
+<div class="flex justify-between font-label-md text-xs text-on-surface-variant mb-2">
+<span class="">Jarayon</span>
+<span class="">65%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20 flex justify-end">
+<button class="font-label-md text-label-md text-primary hover:bg-primary/5 px-4 py-2 rounded-lg transition-colors">Davom etish</button>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface rounded-2xl overflow-hidden shadow-sm border-t-4 border-t-[#006e65] border border-outline-variant/30 hover:shadow-md transition-shadow duration-200 flex flex-col group">
+<div class="p-6 flex-1">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-tertiary/10 text-tertiary p-2 rounded-lg">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="font-label-md text-xs text-on-surface-variant bg-surface-container py-1 px-2 rounded">Texnologiya</span>
+</div>
+<h3 class="font-headline-md text-lg text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">Frontend Development with React</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-6">Komponentlarga asoslangan arxitektura va holatni boshqarishni o'zlashtiring.</p>
+<div>
+<div class="flex justify-between font-label-md text-xs text-on-surface-variant mb-2">
+<span class="">Jarayon</span>
+<span class="">32%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-tertiary h-2 rounded-full" style="width: 32%"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20 flex justify-end">
+<button class="font-label-md text-label-md text-primary hover:bg-primary/5 px-4 py-2 rounded-lg transition-colors">Davom etish</button>
+</div>
+</div>
+<!-- Add New Course Action -->
+<div class="bg-surface-container-low rounded-2xl border-2 border-dashed border-outline-variant/50 flex flex-col items-center justify-center p-6 text-center hover:bg-surface-container transition-colors duration-200 cursor-pointer min-h-[250px]">
+<div class="bg-surface p-3 rounded-full shadow-sm mb-4 text-primary">
+<span class="material-symbols-outlined">add</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface">Yangi kurs qo'shish</h3>
+<p class="font-body-md text-sm text-on-surface-variant mt-2">O'z bilimingizni yangi sohalarda sinab ko'ring</p>
+</div>
+</div>
+</section>
+<!-- Quick Access & Recent Activity -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Last Watched / Unfinished Assignment -->
+<div class="bg-surface rounded-2xl p-6 shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-md text-lg text-on-surface mb-4">Tezkor kirish</h2>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors cursor-pointer mb-3">
+<div class="relative shrink-0">
+<img alt="Video thumbnail" class="w-20 h-14 rounded-lg object-cover" data-alt="A small thumbnail image showing a modern web design interface mockup on a computer screen. The lighting is bright and clear, highlighting the vibrant colors of the design interface. It represents a video lesson on UI/UX design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiDUqt-oAqiT1QuGIgSu72cv0WPspM7j2njzWaPwMoC-5by4W_75LqGNqdL8IZHbfnrP2hM43UTMIVWMdiaOkD_GTTVWgaalHMVDP5zpkCAibM7nTDvMXpjmknBFcvVl9SVTEUwAGhVnn6q1NJoCIPYl_R4ZYEYUjvdmmb7y23LuL4uMizLHvzElXuSFZqIRaRoG8StyKulTGC_kLPPnd3VSfzFRjZfD_rQCNnSeRk2cK0KdtvdyUh9gQ4aE79JSekSOXg8C__ZF0">
+<div class="absolute inset-0 bg-black/30 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">play_circle</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-sm text-on-surface truncate">Typography basics in UI</p>
+<p class="font-body-md text-xs text-on-surface-variant">To'xtatilgan: 12:45</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors cursor-pointer">
+<div class="bg-error-container text-on-error-container p-3 rounded-lg shrink-0">
+<span class="material-symbols-outlined">assignment_late</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-sm text-on-surface truncate">React Hooks Amaliyoti</p>
+<p class="font-body-md text-xs text-error">Muddat: Bugun 23:59</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div class="bg-surface rounded-2xl p-6 shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-md text-lg text-on-surface mb-4">Oxirgi faollik</h2>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<div class="bg-surface-container p-2 rounded-full mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">done_all</span>
+</div>
+<div>
+<p class="font-label-md text-sm text-on-surface">"Color Theory" testini yakunladingiz</p>
+<p class="font-body-md text-xs text-on-surface-variant">2 soat oldin вЂў +50 ball</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="bg-surface-container p-2 rounded-full mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">forum</span>
+</div>
+<div>
+<p class="font-label-md text-sm text-on-surface">Jamiyatda savol berdingiz</p>
+<p class="font-body-md text-xs text-on-surface-variant">Kecha</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="bg-surface-container p-2 rounded-full mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">emoji_events</span>
+</div>
+<div>
+<p class="font-label-md text-sm text-on-surface">Yangi daraja: 12-daraja</p>
+<p class="font-body-md text-xs text-on-surface-variant">2 kun oldin</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-on-background border-t border-outline-variant w-full py-12 px-gutter flex flex-col items-center gap-8 mt-12">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                Edu_AI
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200" href="#">Biz haqimizda</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200" href="#">Yordam markazi</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200" href="#">Shartlar</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200" href="#">Maxfiylik</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200" href="#">Ijtimoiy tarmoqlar</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200" href="#">Til</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant text-sm text-center">
+                В© 2024 Edu_AI. Barcha huquqlar himoyalangan.
+            </p>
+</footer>
+</div>
+
+
+
+
+
+
+<script src="app.js"></script></body></html>
+

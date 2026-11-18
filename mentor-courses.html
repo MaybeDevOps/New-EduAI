@@ -1,0 +1,448 @@
+﻿<!-- Edu_AI - Mentor: Kurslarim -->
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edu_AI Mentor - Kurslarim</title>
+<!-- Google Fonts: Plus Jakarta Sans for Headers, Inter for Body -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#003fb1",
+                    "outline": "#737686",
+                    "primary-fixed": "#dbe1ff",
+                    "tertiary": "#00544c",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#25005a",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "on-background": "#121c2a",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-dim": "#d0dbed",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#27313f",
+                    "outline-variant": "#c3c5d7",
+                    "tertiary-container": "#006e65",
+                    "secondary-container": "#8a4cfc",
+                    "inverse-primary": "#b5c4ff",
+                    "secondary": "#712ae2",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#d9e3f6",
+                    "surface-container": "#e6eeff",
+                    "secondary-fixed": "#eaddff",
+                    "on-surface-variant": "#434654",
+                    "tertiary-fixed": "#89f5e7",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#003dab",
+                    "on-primary-fixed": "#00174d",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "surface-container-high": "#dee9fc",
+                    "on-tertiary-fixed": "#00201d",
+                    "primary-container": "#1a56db",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-container": "#d4dcff",
+                    "surface-tint": "#1353d8",
+                    "on-surface": "#121c2a",
+                    "background": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "on-tertiary-container": "#84f0e2",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Plus Jakarta Sans"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom soft shadows for cards */
+        .shadow-soft {
+            box-shadow: 0 8px 32px rgba(0, 63, 177, 0.05);
+        }
+        .shadow-soft-hover:hover {
+            box-shadow: 0 12px 48px rgba(0, 63, 177, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="w-64 flex-shrink-0 border-r border-outline-variant bg-surface-container-lowest hidden md:flex flex-col h-screen sticky top-0">
+<div class="p-gutter flex flex-col h-full">
+<div class="flex items-center gap-3 mb-8">
+<div class="size-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary" data-icon="school">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-on-surface">Edu_AI</span>
+<span class="text-sm text-on-surface-variant font-medium">Mentor Paneli</span>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">home</span></div><span class="">Asosiy</span></a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md transition-colors group bg-primary-container text-on-primary shadow-lg shadow-primary/20" href="#"><div class="text-on-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span></div><span class="">Kurslarim</span></a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">assignment</span></div><span class="">Vazifalar</span></a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">group</span></div><span class="">O'quvchilar</span></a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">video_camera_front</span></div><span class="">Seminarlar</span></a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant space-y-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-xl bg-surface-container-low mb-2">
+<div class="size-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden shrink-0">
+<img alt="Alisher Ismoilov" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATILTXCKxizgB7X4oAI6JkHjRSblzNcJJPJ3vZvn-UbK3hxDGnxgQbG71weCaXLIJCvPiV7KFosubOyWop8mM2hY6y2dlWYmgfIsh6CLIjdxb4BogzpJkS6vpgZeS9sKfB8YZGq--0TZA2ubzqeOVx3ck1bf4hI2CxG96NVJAXVnPuTlnruJwL4zvLDypwXmUijjYd-U4Qw82mUKpi6uYO7wTlFmBwezgwBRNTsmBdg6iKX2KgTAwu1MQ8qnjTr0Tlows_n63dVnw"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm font-semibold text-on-surface truncate">Alisher Ismoilov</span>
+<span class="text-xs text-on-surface-variant truncate">Bosh Mentor</span>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#">
+<div class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="">Sozlamalar</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Workspace Area -->
+<div class="flex-1 flex flex-col h-full overflow-y-auto bg-surface relative">
+<!-- TopNavBar (Shared Component) -->
+<header class="md:hidden bg-surface-container-lowest border-b border-outline-variant p-4 flex items-center justify-between sticky top-0 z-10">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">school</span>
+</div>
+<span class="font-headline-md text-base text-on-surface">Edu_AI</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Page Content Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 lg:py-12">
+<!-- Header Section -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-display-lg text-[32px] md:text-display-lg text-on-surface mb-2">Mening kurslarim</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Sizning yaratgan o'quv dasturlaringiz va ularning joriy ko'rsatkichlari.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl shadow-soft hover:-translate-y-0.5 hover:shadow-soft-hover transition-all duration-200 flex items-center gap-2 w-fit">
+<span class="material-symbols-outlined">add</span>
+                    Yangi kurs yaratish
+                </button>
+</div>
+<!-- Dashboard Bento Grid (High-level Analytics) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-soft border border-outline-variant/20 flex flex-col justify-between hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed-variant icon-fill">groups</span>
+</div>
+<span class="bg-surface-container text-primary font-label-md text-[12px] px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12%
+                        </span>
+</div>
+<div>
+<p class="font-body-md text-on-surface-variant mb-1">Faol talabalar</p>
+<p class="font-headline-lg text-[28px] text-on-surface">2,450</p>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-soft border border-outline-variant/20 flex flex-col justify-between hover:border-tertiary/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant icon-fill">star</span>
+</div>
+<span class="bg-surface-container text-primary font-label-md text-[12px] px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +0.2
+                        </span>
+</div>
+<div>
+<p class="font-body-md text-on-surface-variant mb-1">O'rtacha reyting</p>
+<p class="font-headline-lg text-[28px] text-on-surface">4.8 <span class="text-[16px] text-on-surface-variant font-normal">/ 5.0</span></p>
+</div>
+</div>
+<!-- Stat Card 3 (Graph Placeholder) -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-soft border border-outline-variant/20 flex flex-col justify-between relative overflow-hidden group">
+<!-- Decor background pattern -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #003fb1 1px, transparent 0); background-size: 20px 20px;"></div>
+<div class="relative z-10 flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant icon-fill">visibility</span>
+</div>
+</div>
+<div class="relative z-10">
+<p class="font-body-md text-on-surface-variant mb-1">Umumiy ko'rishlar</p>
+<p class="font-headline-lg text-[28px] text-on-surface">18.2K</p>
+</div>
+<!-- Faux Sparkline -->
+<div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-secondary-container/20 to-transparent pointer-events-none"></div>
+<svg class="absolute bottom-4 left-0 w-full h-12 text-secondary opacity-50 stroke-current group-hover:opacity-100 transition-opacity duration-300" fill="none" preserveaspectratio="none" stroke-width="2" viewbox="0 0 100 30">
+<path d="M0 25 Q 10 15, 20 20 T 40 10 T 60 15 T 80 5 T 100 10"></path>
+</svg>
+</div>
+</div>
+<!-- Course Grid Section -->
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Mavjud Kurslar</h2>
+<!-- Simple Filter Tabs -->
+<div class="hidden md:flex bg-surface-container-low rounded-lg p-1 border border-outline-variant/30">
+<button class="px-4 py-1.5 rounded-md bg-surface text-primary font-label-md text-label-md shadow-sm">Barchasi</button>
+<button class="px-4 py-1.5 rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-colors">Faol</button>
+<button class="px-4 py-1.5 rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-colors">Qoralama</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-soft shadow-soft-hover transition-all duration-300 flex flex-col border border-outline-variant/10 relative group">
+<!-- Category Accent Line -->
+<div class="absolute top-0 left-0 w-full h-1.5 bg-secondary z-10"></div>
+<!-- Cover Image -->
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="Coding workspace" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-quality, modern flat lay image of a minimalist workspace designed for creative coding. The scene features a sleek laptop, a cup of artisanal coffee, and geometric stationery resting on a pristine white surface. Soft, high-key lighting casts gentle, diffused shadows, creating a bright and optimistic atmosphere. The color palette emphasizes clean whites, subtle cool grays, and small accents of vibrant primary blue to match the UI. The overall composition is airy, professional, and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpFE8rpbUFHOMq9m11asyru5GrcFLpmPrnsmmJHukbsjulxvKVAVr48aHG8E5URfGnK_Exr36xJ0-nuEbFjDivSU7ckeYa2RxaT_qMwSwCZs1-IqdcQOfCs_zftPAYAZlhM3P0DXV0n8j9COgZ9SaWAI4W8-KPV-lpGJ8POsuX8_d7Q5EDgWB7BEmnxppkRB_buaWib6LgO-_dipVH_N7PvxmTjKvZoMbz9hyQV4CVwVe9rL0_R5TZw76exR8PwhmCdz8CnSz2-4c"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-md text-[12px] text-on-surface flex items-center gap-1 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-tertiary-container"></div> Nashr qilingan
+                        </div>
+</div>
+<!-- Content -->
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4 flex-grow">
+<span class="text-secondary font-label-md text-[12px] uppercase tracking-wider mb-2 block">Dasturlash</span>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">Zamonaviy Frontend: React va Tailwind asoslari</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Noldan boshlab murakkab veb-ilovalarni yaratishni o'rganing. Amaliy loyihalar va ilg'or usullar.</p>
+</div>
+<!-- Mini Metrics -->
+<div class="flex items-center gap-4 py-4 border-t border-outline-variant/20 mt-auto">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-[14px]">
+<span class="material-symbols-outlined text-[18px] text-tertiary">star</span>
+                                4.9 <span class="text-outline text-[12px]">(120 izoh)</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-[14px]">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                                850 talaba
+                            </div>
+</div>
+<!-- Actions -->
+<div class="flex gap-3 mt-4 pt-2">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md text-center hover:bg-primary-fixed-dim transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bar_chart</span>
+                                Tahlil
+                            </button>
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md text-center hover:bg-surface-tint transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                                Tahrirlash
+                            </button>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-soft shadow-soft-hover transition-all duration-300 flex flex-col border border-outline-variant/10 relative group">
+<div class="absolute top-0 left-0 w-full h-1.5 bg-tertiary z-10"></div>
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="Data Analytics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A vibrant and conceptual 3D illustration representing data analytics and learning progress. Floating, translucent geometric shapes and stylised pie charts hover in a bright, ethereal environment. The lighting is soft and global, giving the objects a frosted glass appearance. The dominant colors are crisp whites, light primary blues, and gentle touches of tertiary teal, reflecting a modern educational aesthetic. The mood is forward-looking, intelligent, and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBotOb_wzQsW321JsJttojC9ccyPyeg4CmuFdOh74F_sFIQ6GxdKd9QjpFZEOVavkDZCtrqZ8DRebSd9DHIjXkdJnINhTrKyps83S8GctsE0IWhrmHt11oxAfp-QY9sDlQ08mr00uTHMgkmEARue706zARttzBY-TpJU5hbs0ZF_7YKOEFmkzsSbiYcEt9BL1ScOp7XGTMaa4rJyYAiuHPezZ_117TtQZdMTQdULN9VSIgenABzKoLsby5BZWXiHXRjndW-64Fx20U"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-md text-[12px] text-on-surface flex items-center gap-1 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-tertiary-container"></div> Nashr qilingan
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4 flex-grow">
+<span class="text-tertiary font-label-md text-[12px] uppercase tracking-wider mb-2 block">Ma'lumotlar Ilmi</span>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">Data Science: Python bilan tahlil qilish</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Ma'lumotlarni yig'ish, tozalash va vizualizatsiya qilishning zamonaviy usullari.</p>
+</div>
+<div class="flex items-center gap-4 py-4 border-t border-outline-variant/20 mt-auto">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-[14px]">
+<span class="material-symbols-outlined text-[18px] text-tertiary">star</span>
+                                4.7 <span class="text-outline text-[12px]">(85 izoh)</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-[14px]">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                                1,200 talaba
+                            </div>
+</div>
+<div class="flex gap-3 mt-4 pt-2">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md text-center hover:bg-primary-fixed-dim transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bar_chart</span>
+                                Tahlil
+                            </button>
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md text-center hover:bg-surface-tint transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                                Tahrirlash
+                            </button>
+</div>
+</div>
+</div>
+<!-- Course Card 3 (Draft State) -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-soft transition-all duration-300 flex flex-col border border-outline-variant/30 relative group opacity-90 hover:opacity-100">
+<div class="absolute top-0 left-0 w-full h-1.5 bg-outline z-10"></div>
+<div class="h-48 relative overflow-hidden bg-surface-variant/50">
+<div class="absolute inset-0 flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined text-[48px]">imagesmode</span>
+</div>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-md text-[12px] text-on-surface-variant flex items-center gap-1 border border-outline-variant/50">
+<div class="w-2 h-2 rounded-full bg-outline"></div> Qoralama
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4 flex-grow">
+<span class="text-outline font-label-md text-[12px] uppercase tracking-wider mb-2 block">Dizayn</span>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface-variant mb-2 line-clamp-2">UI/UX Dizayn Asoslari: Figma Masterclass</h3>
+<p class="font-body-md text-[14px] text-outline line-clamp-2">Foydalanuvchi interfeysini loyihalash qoidalari va Figma dasturida ishlash bo'yicha to'liq qo'llanma.</p>
+</div>
+<!-- Progress bar instead of metrics for draft -->
+<div class="py-4 border-t border-outline-variant/20 mt-auto">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-[12px] text-on-surface-variant">Tuzish jarayoni</span>
+<span class="font-label-md text-[12px] text-primary">65%</span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full w-[65%]"></div>
+</div>
+</div>
+<div class="flex gap-3 mt-4 pt-2">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-surface-variant text-on-surface-variant font-label-md text-label-md text-center hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Ko'rish
+                            </button>
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md text-center hover:bg-surface-tint transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                                Davom etish
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 px-gutter flex flex-col items-center gap-8 bg-surface-container-highest dark:bg-on-background border-t border-outline-variant mt-auto shrink-0">
+<div class="font-headline-md text-headline-md font-bold text-primary">Edu_AI</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Help Center</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Terms</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Social</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Language</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant text-center">
+                В© 2024 Edu_AI. Barcha huquqlar himoyalangan.
+            </div>
+</footer>
+</div>
+<script src="app.js"></script></body></html>
+

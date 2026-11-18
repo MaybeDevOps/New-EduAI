@@ -1,0 +1,423 @@
+﻿<!-- Edu_AI - Mentor: O'quvchilar -->
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>O'quvchilar - Edu_AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#f8f9ff",
+                      "primary": "#003fb1",
+                      "outline": "#737686",
+                      "primary-fixed": "#dbe1ff",
+                      "tertiary": "#00544c",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed": "#25005a",
+                      "surface": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "on-background": "#121c2a",
+                      "primary-fixed-dim": "#b5c4ff",
+                      "surface-container-highest": "#d9e3f6",
+                      "surface-dim": "#d0dbed",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#27313f",
+                      "outline-variant": "#c3c5d7",
+                      "tertiary-container": "#006e65",
+                      "secondary-container": "#8a4cfc",
+                      "inverse-primary": "#b5c4ff",
+                      "secondary": "#712ae2",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#d9e3f6",
+                      "surface-container": "#e6eeff",
+                      "secondary-fixed": "#eaddff",
+                      "on-surface-variant": "#434654",
+                      "tertiary-fixed": "#89f5e7",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#003dab",
+                      "on-primary-fixed": "#00174d",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "surface-container-high": "#dee9fc",
+                      "on-tertiary-fixed": "#00201d",
+                      "primary-container": "#1a56db",
+                      "on-secondary-container": "#fffbff",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary-container": "#d4dcff",
+                      "surface-tint": "#1353d8",
+                      "on-surface": "#121c2a",
+                      "background": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "on-tertiary-container": "#84f0e2",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .material-symbols-outlined {
+              font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          }
+          .glass-card {
+              background: rgba(255, 255, 255, 0.7);
+              backdrop-filter: blur(10px);
+              -webkit-backdrop-filter: blur(10px);
+              border: 1px solid rgba(255, 255, 255, 0.3);
+          }
+      </style>
+</head>
+<body class="bg-background text-on-background antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="bg-surface-container-low dark:bg-on-background shadow-md hidden md:flex flex-col h-full w-64 docked left-0 flex-shrink-0 z-20 transition-all duration-200 ease-in-out">
+<div class="p-6 flex flex-col gap-8 h-full">
+<!-- Logo Area -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">school</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Edu_AI</h2>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-2 flex-1"><a class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant p-3 hover:bg-surface-variant dark:hover:bg-inverse-surface rounded-xl transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">home</span>
+<span>Asosiy</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant p-3 hover:bg-surface-variant dark:hover:bg-inverse-surface rounded-xl transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">book</span>
+<span>Kurslarim</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant p-3 hover:bg-surface-variant dark:hover:bg-inverse-surface rounded-xl transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">assignment</span>
+<span>Vazifalar</span>
+</a>
+<a class="flex items-center gap-3 bg-primary text-on-primary rounded-xl p-3 font-label-md text-label-md shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>O'quvchilar</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant p-3 hover:bg-surface-variant dark:hover:bg-inverse-surface rounded-xl transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">event</span>
+<span>Seminar</span>
+</a></div>
+<!-- Profile & Settings -->
+<div class="mt-auto flex flex-col gap-4 pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3 p-2">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img alt="Mentor Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCXt1QR7vYEK5eFPDQQxStE-P-FmH7LhEv_TFldbvK7ocmyAk7kZKeyoF9ayNwUAr-QuOYBL8QYOLrRyXpuXACg1gagfsowGyQ6k4zoqJhADDGWV0F3sroXz-pP9SoduyPXOkuvjDp2sZWkp9l07r6E8fwmyK7X6fW9NdKazUA4wg8jU8nAud_Xx58CMkr0ogfCMe8aRbU5yhC_PLlWAwAi2z71eN9pZr65tXBNULujxwWyMQVLcK3MesiQMyJ9CubOz-UKnMDwns"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface truncate">Alisher Ismoilov</p>
+<p class="text-xs text-on-surface-variant truncate text-body-md">Mentor</p>
+</div>
+</div>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant p-3 hover:bg-surface-variant dark:hover:bg-inverse-surface rounded-xl transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="">Sozlamalar</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background relative">
+<!-- TopNavBar (Mobile & General Header Space) -->
+<header class="bg-surface dark:bg-on-background shadow-sm docked full-width top-0 z-10 md:hidden">
+<div class="flex justify-between items-center px-gutter py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">school</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Edu_AI</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCXt1QR7vYEK5eFPDQQxStE-P-FmH7LhEv_TFldbvK7ocmyAk7kZKeyoF9ayNwUAr-QuOYBL8QYOLrRyXpuXACg1gagfsowGyQ6k4zoqJhADDGWV0F3sroXz-pP9SoduyPXOkuvjDp2sZWkp9l07r6E8fwmyK7X6fW9NdKazUA4wg8jU8nAud_Xx58CMkr0ogfCMe8aRbU5yhC_PLlWAwAi2z71eN9pZr65tXBNULujxwWyMQVLcK3MesiQMyJ9CubOz-UKnMDwns"/>
+</div>
+</div>
+</div>
+<!-- Mobile Nav Tabs -->
+<div class="flex px-gutter gap-6 overflow-x-auto border-b border-outline-variant">
+<a class="text-on-surface-variant py-3 font-label-md text-label-md whitespace-nowrap" href="#">Asosiy</a>
+<a class="text-on-surface-variant py-3 font-label-md text-label-md whitespace-nowrap" href="#">Kurslarim</a>
+<a class="text-primary font-bold border-b-2 border-primary py-3 font-label-md text-label-md whitespace-nowrap" href="#">O'quvchilar</a>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 overflow-y-auto p-margin-mobile md:p-gutter lg:p-margin-desktop">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-background mb-2">O'quvchilar</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                        Guruhingizdagi o'quvchilarning o'zlashtirish darajasi va AI tahlili asosidagi tavsiyalarni kuzatib boring.
+                    </p>
+</div>
+<div class="flex gap-3">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg focus:border-primary focus:ring-2 focus:ring-primary-fixed-dim transition-shadow font-body-md text-body-md placeholder-outline-variant text-on-background" placeholder="O'quvchini izlash..." type="text"/>
+</div>
+<button class="bg-surface-container-low border border-outline-variant text-on-background p-2 rounded-lg hover:bg-surface-variant transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Layout for Students -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Student Card 1 -->
+<div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group border-t-4 border-t-secondary">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-secondary">trending_up</span>
+</div>
+<div class="flex items-start gap-4 mb-6 relative z-10">
+<img alt="Student Avatar" class="w-16 h-16 rounded-full object-cover border-2 border-surface shadow-sm" data-alt="A portrait of a young male student looking focused and engaged. He is wearing casual modern clothing. The lighting is bright and clear, set against a subtle, modern studio background with soft blue hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlQTG1QkshU41ib75S2W3fcQ8RvWHYFKwZIAB0rc0Jv0ZhM84HFKen2l97fmYJXo7tALVSx6cmFrmv6Wode3GKFQnR6PZF9BfIOkM5kn_DjiiuKqw2hbsXdHTjaLsUpcbKgPnXU1WPjZeZp81B68sTuTEl4-7xaLmIQVvJcvKGfvM-UUI9HbKXAcvgxZVz2bZ0Ty_wcVyShfo0n6QlgrwyfwBdwVSb7DfIFKNGkakQ4S7Mf4cyH2mTH47HU4-XAZGlrxhpbfcu_sE"/>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-on-background">Azizbek Rahimov</h3>
+<p class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2 soat oldin onlayn
+                            </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md text-sm whitespace-nowrap">
+                            Faol
+                        </span>
+</div>
+<!-- Progress Section -->
+<div class="mb-6 z-10 relative">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-on-background">O'zlashtirish</span>
+<span class="font-headline-md text-body-lg font-bold text-primary">78%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5 overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full" style="width: 78%"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">UX/UI Asoslari kursi</p>
+</div>
+<!-- AI Insights -->
+<div class="bg-error-container/30 rounded-xl p-4 border border-error-container z-10 relative">
+<h4 class="font-label-md text-label-md text-error flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[20px]">psychology_alt</span>
+                            AI Tahlili: Qiynalish nuqtasi
+                        </h4>
+<p class="font-body-md text-body-md text-on-background text-sm">
+                            "Figma'da Auto Layout" mavzusidagi amaliy vazifada xatolar ko'p kuzatildi. Qo'shimcha tushuntirish tavsiya etiladi.
+                        </p>
+</div>
+</div>
+<!-- Student Card 2 -->
+<div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group border-t-4 border-t-tertiary">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-tertiary">verified</span>
+</div>
+<div class="flex items-start gap-4 mb-6 relative z-10">
+<img alt="Student Avatar" class="w-16 h-16 rounded-full object-cover border-2 border-surface shadow-sm" data-alt="A bright portrait of a young female student with a warm smile. She appears confident and ready to learn. The environment is well-lit with natural light, featuring a soft, airy background typical of a modern learning hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdm118XRG-9hSRiY7ZCF6kPDsJwx73JXiF9Wm4IkQbAgB40XxpO4TAOiNIM5AdvsPbtJ3J4CaIUr57K3gqzXYSlv3wrC8NaaWKOHISBKLHrdArwda9o1P7iI4G4Oc8wh2iZ9gTcp4VSpqDd57MIWhZMVEgEqhdfYUE0NQehIvbT0wE-PGOd_YL1Rf7C7sV4F5qhcg_E00BfN1tnt4ExvVwtvAFtvVmuT2Bd-qCZAVzy-L-6ONiRL5SZCAhw4tLG1Ehk6iQshj7cCo"/>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-on-background">Malika Usmonova</h3>
+<p class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 1 kun oldin onlayn
+                            </p>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full font-label-md text-label-md text-sm whitespace-nowrap flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-outline block"></span> Passiv
+                        </span>
+</div>
+<!-- Progress Section -->
+<div class="mb-6 z-10 relative">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-on-background">O'zlashtirish</span>
+<span class="font-headline-md text-body-lg font-bold text-tertiary">92%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5 overflow-hidden">
+<div class="bg-gradient-to-r from-tertiary-container to-tertiary h-2.5 rounded-full" style="width: 92%"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">JavaScript Dasturlash</p>
+</div>
+<!-- AI Insights -->
+<div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant/50 z-10 relative">
+<h4 class="font-label-md text-label-md text-tertiary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                            Muvaffaqiyatli
+                        </h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                            Barcha vazifalarni o'z vaqtida, yuqori natija bilan topshirmoqda. Navbatdagi modulga o'tishga tayyor.
+                        </p>
+</div>
+</div>
+<!-- Student Card 3 -->
+<div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group border-t-4 border-t-error">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-error">warning</span>
+</div>
+<div class="flex items-start gap-4 mb-6 relative z-10">
+<div class="w-16 h-16 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center font-headline-md text-headline-md font-bold shadow-sm">
+                            JS
+                        </div>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-on-background">Javohir Saidov</h3>
+<p class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 5 kun oldin onlayn
+                            </p>
+</div>
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full font-label-md text-label-md text-sm whitespace-nowrap">
+                            Xavf ostida
+                        </span>
+</div>
+<!-- Progress Section -->
+<div class="mb-6 z-10 relative">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-on-background">O'zlashtirish</span>
+<span class="font-headline-md text-body-lg font-bold text-error">35%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5 overflow-hidden">
+<div class="bg-error h-2.5 rounded-full" style="width: 35%"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">Python Backend Asoslari</p>
+</div>
+<!-- AI Insights -->
+<div class="bg-error-container/50 rounded-xl p-4 border border-error z-10 relative">
+<h4 class="font-label-md text-label-md text-error flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+                            E'tibor talab qilinadi
+                        </h4>
+<p class="font-body-md text-body-md text-on-background text-sm font-medium">
+                            So'nggi 3 ta vazifa topshirilmadi. "Ma'lumotlar bazasi bilan ishlash" modulida qolib ketgan. Bog'lanish tavsiya etiladi.
+                        </p>
+<button class="mt-3 w-full bg-surface-container-lowest text-on-background border border-outline-variant py-2 rounded-lg font-label-md text-label-md text-sm hover:bg-surface-variant transition-colors">
+                            Xabar yozish
+                        </button>
+</div>
+</div>
+</div>
+<!-- Quick Stats Area -->
+<div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col items-center justify-center text-center">
+<span class="font-display-lg text-display-lg text-primary">24</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Jami o'quvchilar</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col items-center justify-center text-center">
+<span class="font-display-lg text-display-lg text-tertiary">18</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Faol</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col items-center justify-center text-center">
+<span class="font-display-lg text-display-lg text-secondary">82%</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">O'rtacha o'zlashtirish</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col items-center justify-center text-center">
+<span class="font-display-lg text-display-lg text-error">2</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Yordamga muhtoj</span>
+</div>
+</div>
+<!-- Footer (from JSON context) -->
+<footer class="mt-12 bg-surface-container-highest dark:bg-on-background border-t border-outline-variant w-full py-12 px-gutter flex flex-col items-center gap-8 rounded-t-3xl">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Edu_AI</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Help Center</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Terms</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed underline transition-opacity duration-200 font-body-md text-body-md" href="#">Privacy</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">В© 2024 Edu_AI. Barcha huquqlar himoyalangan.</p>
+</footer>
+</div>
+</main>
+<script src="app.js"></script></body></html>
+

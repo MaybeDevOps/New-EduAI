@@ -1,0 +1,399 @@
+﻿<!-- Edu_AI - Mentor: Seminarlar -->
+<!DOCTYPE html>
+
+<html class="light" lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edu_AI - Seminarlar</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "primary": "#003fb1",
+                        "outline": "#737686",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary": "#00544c",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#25005a",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-background": "#121c2a",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "surface-container-highest": "#d9e3f6",
+                        "surface-dim": "#d0dbed",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#27313f",
+                        "outline-variant": "#c3c5d7",
+                        "tertiary-container": "#006e65",
+                        "secondary-container": "#8a4cfc",
+                        "inverse-primary": "#b5c4ff",
+                        "secondary": "#712ae2",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d9e3f6",
+                        "surface-container": "#e6eeff",
+                        "secondary-fixed": "#eaddff",
+                        "on-surface-variant": "#434654",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#003dab",
+                        "on-primary-fixed": "#00174d",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-container-high": "#dee9fc",
+                        "on-tertiary-fixed": "#00201d",
+                        "primary-container": "#1a56db",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-container": "#d4dcff",
+                        "surface-tint": "#1353d8",
+                        "on-surface": "#121c2a",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-tertiary-container": "#84f0e2",
+                        "on-tertiary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem"
+                    },
+                    spacing: {
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "32px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "display-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }]
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 25px -5px rgba(0, 63, 177, 0.05), 0 8px 10px -6px rgba(0, 63, 177, 0.01)',
+                        'float': '0 20px 25px -5px rgba(0, 63, 177, 0.1), 0 10px 10px -5px rgba(0, 63, 177, 0.04)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Modal Animation Styles */
+        .modal-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out;
+        }
+        .modal-overlay.active .modal-content {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background font-body-md antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar (From Shared Components JSON) -->
+<nav class="hidden lg:flex flex-col h-full p-4 gap-2 docked left-0 w-64 bg-surface-container-low shadow-md z-20 shrink-0"><!-- Header -->
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">psychology</span>
+</div>
+<div>
+<h1 class="font-headline-md text-xl font-bold text-on-background">EduAI</h1>
+<p class="text-[10px] text-primary font-bold tracking-[0.2em] uppercase">Mentor Panel</p>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<div class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Asosiy</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md">Kurslarim</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-md">Vazifalar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md">O'quvchilar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-xl shadow-md transition-all" href="#">
+<span class="material-symbols-outlined icon-filled">video_library</span>
+<span class="font-label-md">Seminarlar</span>
+</a>
+</div>
+<!-- Bottom Section -->
+<div class="p-4 mt-auto border-t border-outline-variant/30">
+<div class="space-y-1 mb-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md">Sozlamalar</span>
+</a>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-3 flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-xl object-cover ring-2 ring-primary/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsigEZpf1Ncz6IYCH_L4JQG9gzRSC93zR4Eww_4engSzHJ2GJ1abunxSPFHBnb5JT2qgLJAZPi0DR3lsbPp9TlSSw8SWn43u7qGAufPTqLYzo2RAbSJEzoQbZjxefcDIJUifT0T0lR0IVuN6tGhG8fXd-wsBZHwCe_AEdVIyDL15MWSGcrNnJ6KYrdMqCSGw290xTjRsFSREhFhzKTFMW-pgHS9J7utJyqWQ0fFdizK2GyQDTppIv4n7a-34zVCbvNLRmYcgTQaFg"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-on-surface truncate">Alisher Ismoilov</p>
+<p class="text-[11px] text-on-surface-variant truncate">Bosh mentor</p>
+</div>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</button>
+</div>
+</div></nav>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto relative bg-background">
+<!-- Mobile Top Nav (Simplified for Mobile view) -->
+<div class="lg:hidden flex justify-between items-center px-margin-mobile py-4 bg-surface-container-low shadow-sm sticky top-0 z-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Edu_AI</h1>
+<button class="text-on-surface-variant p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high text-primary rounded-full mb-4">
+<span class="material-symbols-outlined text-sm">video_library</span>
+<span class="font-label-md text-[12px] font-semibold tracking-wide uppercase">Mentor Paneli</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background mb-2">Seminarlar</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">O'tkazilgan video darsliklar galereyasi va yangi tadbirlarni rejalashtirish markazi.</p>
+</div>
+<button class="group relative inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md overflow-hidden transition-all duration-300 hover:shadow-float hover:-translate-y-1" id="openModalBtn">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+<span class="material-symbols-outlined relative z-10">add_circle</span>
+<span class="relative z-10">Yangi seminar rejalashtirish</span>
+</button>
+</div>
+<!-- Video Gallery Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Video Card 1 (Featured/Large) -->
+<div class="md:col-span-2 xl:col-span-2 group relative rounded-3xl overflow-hidden bg-surface-container-lowest shadow-soft border-t-4 border-secondary-container transition-all duration-300 hover:shadow-float">
+<div class="aspect-video w-full relative overflow-hidden bg-surface-dim">
+<img alt="Seminar Thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide, cinematic shot of a modern conference room during a tech presentation. A bright screen displays abstract data visualizations in primary blue and vibrant orange. The room is softly lit with natural daylight streaming through large windows, creating a clean, high-end corporate aesthetic suitable for a light-mode educational platform. The mood is focused and inspiring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6eDGswDaS-sBcy2XOgTPMyNPhwKzNscU1fsvB2Cxkda2k4HAKxQmf1XmvaKjP9vBmTJ7xzeGS-R6sVYyzyPmOjjt54BKnwT4xJGjIFkMh1ZcB817oWo82dFcSnnJ9Dp2Qc4WxhkVOnc1TzUsGhpAVrv1odWD6SWg9-lVEPVglYD4IAJudr3PYj5FQohZpr5I13GgGWECW7LeHT9uj1bvksCUlPtaYd1k9kDb80GpaDsxI8IVq8itVXNHTF2-zy3__70_IoT1VfCk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg">
+<span class="material-symbols-outlined text-white text-4xl ml-1 icon-filled">play_arrow</span>
+</div>
+</div>
+<!-- Duration Badge -->
+<div class="absolute bottom-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-lg text-white font-label-md text-xs">
+                            1 soat 15 daqiqa
+                        </div>
+</div>
+<div class="p-6 md:p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="px-3 py-1 bg-surface-container text-primary rounded-full font-label-md text-xs font-semibold">Sun'iy Intellekt</span>
+<span class="text-outline text-sm font-body-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> 12 Okt, 2024
+                            </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2 group-hover:text-primary transition-colors">AI yordamida o'quv jarayonini avtomatlashtirish</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Mentorlar uchun maxsus master-klass. Kundalik vazifalarni qanday qilib sun'iy intellekt orqali yengillashtirish mumkinligi haqida batafsil ma'lumot.</p>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest shadow-soft border-t-4 border-tertiary-container transition-all duration-300 hover:shadow-float flex flex-col">
+<div class="aspect-video w-full relative overflow-hidden bg-surface-dim">
+<img alt="Seminar Thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A dynamic, close-up shot of a diverse group of young professionals collaborating around a bright, modern wooden table. They are looking at a sleek silver laptop. The environment is infused with soft, natural light, emphasizing a fresh, optimistic, and energetic learning atmosphere. Colors are vibrant with primary blue and clean white tones dominating the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-OG6U56F36IePrRVvPS7WblSNF8ANSEDAupDrhJZJ99RR6UsfMX1rd6XePPuh6HOdvlskxoXzX0XrnGg2ZnrCWrX4bFKE8mWRPbkG1sb33Hb2uBAJNNVmf0ihXAx-V5JxFXcjQCPQhro8Rkbe2wslhWYX8M8nQP-gtrkhFkPho8Uadyzk_Zl5HqFG9GTV_Q7lHRNqNC1Cj3PJHRo_L7fI5362tZSk6pgyXzlwAsF1wi2d_LeOATnxH2nZ7m_45dOtfGj1LeB7Q5U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-12 h-12 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50">
+<span class="material-symbols-outlined text-white text-2xl ml-1 icon-filled">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 px-2 py-1 bg-black/60 rounded text-white font-label-md text-[10px]">45 daqiqa</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<span class="text-tertiary-container text-xs font-label-md font-semibold mb-2 block uppercase tracking-wider">Metodologiya</span>
+<h3 class="font-label-md text-[16px] leading-tight text-on-background mb-2 group-hover:text-tertiary-container transition-colors">Interaktiv dars o'tish usullari</h3>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2 mt-auto">O'quvchilarni jalb qilishning 5 ta samarali usuli.</p>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="group relative rounded-3xl overflow-hidden bg-surface-container-lowest shadow-soft border-t-4 border-primary transition-all duration-300 hover:shadow-float flex flex-col">
+<div class="aspect-video w-full relative overflow-hidden bg-surface-dim">
+<img alt="Seminar Thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A clean, minimalist composition showing a person's hands actively typing on a modern white keyboard on a pristine white desk. Beside the keyboard is a stylized, brightly colored notebook in brand blue. The lighting is diffused and even, creating a highly professional, light-mode friendly workspace vibe that conveys focus and modern education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF0WvXfSx7RAPmQrcnH8cln-UVtZcqSpvlPnHxIG02eGkvE8boouZgI_-MxSvtY3kjryZZlm_LmY3PW8nsgf2csrUCTnCEWmlHnX1rrGYdGM1a4ejt3EqWjwkFLJawGSaJQsdgNXsFnpCJ_OA0F0Y2icV8x0Y1dNk0ztcxG9eB10ArzY-ptlCCtziecb4rmM2p6UnQEwl_woS_D2gXArAGLnBG4I9gkwXKo71nzWDqM7WEnCj4Z7xqscDws2VoOQKeQ10Miur8muE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-12 h-12 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50">
+<span class="material-symbols-outlined text-white text-2xl ml-1 icon-filled">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 px-2 py-1 bg-black/60 rounded text-white font-label-md text-[10px]">52 daqiqa</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<span class="text-primary text-xs font-label-md font-semibold mb-2 block uppercase tracking-wider">Texnologiya</span>
+<h3 class="font-label-md text-[16px] leading-tight text-on-background mb-2 group-hover:text-primary transition-colors">Platformadan samarali foydalanish</h3>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2 mt-auto">Yangi funksiyalar va ularning afzalliklari.</p>
+</div>
+</div>
+<!-- Add more cards as needed to fill grid... -->
+</div>
+</div>
+</main>
+<!-- Modal Form Overlay -->
+<div class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-on-background/40 backdrop-blur-sm" id="seminarModal">
+<!-- Modal Content Container -->
+<div class="modal-content relative w-full max-w-lg bg-surface-container-lowest rounded-3xl shadow-float overflow-hidden flex flex-col max-h-[90vh]">
+<!-- Modal Header -->
+<div class="flex items-center justify-between p-6 md:p-8 border-b border-surface-container-highest bg-surface-bright">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-background">Yangi seminar</h2>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">Tadbir ma'lumotlarini kiriting</p>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface hover:bg-surface-variant text-outline transition-colors" id="closeModalBtn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body (Form) -->
+<div class="p-6 md:p-8 overflow-y-auto flex-1">
+<form class="space-y-6">
+<!-- Input Group: Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="seminarName">Seminar nomi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">title</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-on-background focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed-dim transition-all placeholder:text-outline-variant/70" id="seminarName" placeholder="Masalan: Ilg'or pedagogik texnologiyalar" type="text"/>
+</div>
+</div>
+<!-- Input Group: Topic/Category -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="seminarTopic">Mavzusi (Yo'nalish)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">category</span>
+<select class="w-full pl-12 pr-10 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-on-background appearance-none focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed-dim transition-all" id="seminarTopic">
+<option disabled="" selected="" value="">Yo'nalishni tanlang</option>
+<option value="ai">Sun'iy Intellekt</option>
+<option value="methodology">Metodologiya</option>
+<option value="tech">Texnologiya</option>
+<option value="softskills">Yumshoq ko'nikmalar</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Input Group: Date & Time (Grid) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="seminarDate">Sana</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">calendar_month</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-on-background focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed-dim transition-all" id="seminarDate" type="date"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="seminarTime">Vaqti</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">schedule</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface border border-outline-variant rounded-xl font-body-md text-on-background focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed-dim transition-all" id="seminarTime" type="time"/>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- Modal Footer -->
+<div class="p-6 md:p-8 bg-surface border-t border-surface-container-highest flex justify-end gap-3">
+<button class="px-6 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-colors" id="cancelModalBtn">
+                    Bekor qilish
+                </button>
+<button class="px-6 py-3 bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-sm hover:bg-surface-tint hover:-translate-y-0.5 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">event_available</span>
+                    Rejalashtirish
+                </button>
+</div>
+</div>
+</div>
+<!-- Interactive Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('seminarModal');
+            const openBtn = document.getElementById('openModalBtn');
+            const closeBtn = document.getElementById('closeModalBtn');
+            const cancelBtn = document.getElementById('cancelModalBtn');
+
+            const toggleModal = () => {
+                modal.classList.toggle('active');
+                // Optional: Prevent body scrolling when modal is open
+                if (modal.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            };
+
+            openBtn.addEventListener('click', toggleModal);
+            closeBtn.addEventListener('click', toggleModal);
+            cancelBtn.addEventListener('click', toggleModal);
+
+            // Close on backdrop click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    toggleModal();
+                }
+            });
+        });
+    </script>
+<script src="app.js"></script></body></html>
+

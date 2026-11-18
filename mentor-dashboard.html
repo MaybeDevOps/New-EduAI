@@ -1,0 +1,388 @@
+﻿<!-- Edu_AI - Mentor: Asosiy -->
+<!DOCTYPE html><html lang="uz" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Edu_AI - Mentor Paneli</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e6eeff",
+                        "on-primary-fixed": "#00174d",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "primary-fixed": "#dbe1ff",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#eaddff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b5c4ff",
+                        "tertiary": "#00544c",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "on-primary-container": "#d4dcff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d9e3f6",
+                        "tertiary-container": "#006e65",
+                        "surface-container-low": "#eff4ff",
+                        "outline-variant": "#c3c5d7",
+                        "on-secondary-fixed": "#25005a",
+                        "on-primary-fixed-variant": "#003dab",
+                        "inverse-surface": "#27313f",
+                        "secondary": "#712ae2",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "tertiary-fixed": "#89f5e7",
+                        "primary": "#003fb1",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-tertiary-container": "#84f0e2",
+                        "primary-container": "#1a56db",
+                        "on-surface-variant": "#434654",
+                        "on-tertiary-fixed": "#00201d",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#8a4cfc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "surface-dim": "#d0dbed",
+                        "on-surface": "#121c2a",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d9e3f6",
+                        "surface-tint": "#1353d8",
+                        "outline": "#737686",
+                        "on-background": "#121c2a",
+                        "surface-container-high": "#dee9fc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "sm": "0.25rem",
+                        "md": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex w-full overflow-x-hidden">
+<!-- Sidebar Shared Component -->
+<aside class="w-64 flex-shrink-0 border-r border-outline-variant bg-surface-container-lowest hidden md:flex flex-col h-screen sticky top-0" style="background-color: rgb(248, 249, 255);">
+<div class="p-gutter flex flex-col h-full">
+<div class="flex items-center gap-3 mb-8">
+<div class="size-10 bg-surface-container-highest rounded-full flex items-center justify-center text-primary" data-icon="school">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-on-surface">Edu_AI</span>
+<span class="text-sm text-on-surface-variant font-medium">Mentor Paneli</span>
+</div>
+</div>
+<nav class="flex-1 space-y-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md transition-colors group bg-primary-container text-on-primary" href="#"><div class="text-on-secondary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span></div><span class="">Asosiy</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">school</span></div><span class="">Kurslarim</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">assignment</span></div><span class="">Vazifalar</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">group</span></div><span class="">O'quvchilar</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#"><div class="text-on-surface-variant group-hover:text-primary transition-colors"><span class="material-symbols-outlined">video_camera_front</span></div><span class="">Seminarlar</span></a></nav>
+<div class="mt-auto pt-4 border-t border-outline-variant space-y-2"><!-- User Profile Section -->
+<div class="flex items-center gap-3 px-3 py-3 rounded-xl bg-surface-container-low mb-2">
+<div class="size-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden shrink-0">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm font-semibold text-on-surface truncate">Alisher Ismoilov</span>
+<span class="text-xs text-on-surface-variant truncate">Bosh Mentor</span>
+</div>
+</div>
+<!-- Settings Link -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-label-md transition-colors hover:bg-surface-container hover:text-on-surface group" href="#">
+<div class="text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="">Sozlamalar</span>
+</a></div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-h-screen">
+<!-- Top Header Mobile (Visible only on mobile) -->
+<header class="md:hidden bg-surface-container-lowest border-b border-outline-variant p-4 flex items-center justify-between sticky top-0 z-10">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">school</span>
+</div>
+<span class="font-headline-md text-base text-on-surface">Edu_AI</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Content Area -->
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex-1 flex flex-col gap-gutter">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4 mt-4 md:mt-0">
+<div>
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mb-2">Xush kelibsiz, Alisher!</h1>
+<p class="text-body-md text-on-surface-variant">Bugungi kun uchun xulosalar va faolliklar.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-surface-container text-primary font-label-md rounded-lg hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                        Yangi dars qo'shish
+                    </button>
+</div>
+</section>
+<!-- Metrics Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 size-24 bg-primary-fixed-dim opacity-20 rounded-full blur-xl group-hover:bg-primary-container transition-colors"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">group</span>
+</div>
+<h3 class="font-label-md text-on-surface-variant">Jami o'quvchilar</h3>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-on-surface">1,240</span>
+<span class="text-sm font-medium text-tertiary flex items-center bg-tertiary-fixed px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px] leading-none">arrow_upward</span>
+                            12%
+                        </span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 size-24 bg-tertiary-fixed-dim opacity-20 rounded-full blur-xl group-hover:bg-tertiary-container transition-colors"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 bg-tertiary-container rounded-lg flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<h3 class="font-label-md text-on-surface-variant">O'rtacha o'zlashtirish</h3>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-on-surface">78%</span>
+<span class="text-sm font-medium text-tertiary flex items-center bg-tertiary-fixed px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px] leading-none">arrow_upward</span>
+                            5%
+                        </span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 size-24 bg-error-container opacity-20 rounded-full blur-xl group-hover:bg-error transition-colors"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 bg-error-container rounded-lg flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined">assignment_late</span>
+</div>
+<h3 class="font-label-md text-on-surface-variant">Tekshirilmagan vazifalar</h3>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-on-surface">34</span>
+<span class="text-sm font-medium text-error flex items-center bg-error-container px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px] leading-none">arrow_downward</span>
+                            2
+                        </span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 size-24 bg-secondary-fixed-dim opacity-20 rounded-full blur-xl group-hover:bg-secondary-container transition-colors"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">star</span>
+</div>
+<h3 class="font-label-md text-on-surface-variant">O'rtacha reyting</h3>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-on-surface">4.8</span>
+<span class="text-sm font-medium text-on-surface-variant ml-1">/ 5.0</span>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Active Courses Column (Takes up 2/3 space on large screens) -->
+<section class="lg:col-span-2 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-md font-headline-md text-on-surface">Faol kurslar</h2>
+<a class="text-primary font-label-md hover:underline flex items-center" href="#">Barchasini ko'rish <span class="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden hover:shadow-md transition-all group flex flex-col border-t-4 border-t-tertiary">
+<div class="h-32 bg-surface-container relative">
+<img alt="AI Course" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A modern, well-lit classroom setting emphasizing artificial intelligence concepts. A holographic glowing blue brain floats above a sleek, minimalist white desk. The lighting is soft and bright, creating an inviting light-mode aesthetic. The color palette features pristine whites, soft grays, and technological teal accents. The mood is futuristic yet accessible and educational." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA20V22T5ZyRSqTcWRgxUvbICbjTMh_4ZkwhEtdMxE0togHbnILzbu3ratgpW0x7i_qSUuXPekit4lpqG5CcTVf4NxkScn21bv0tFFYCIWJDoLMIy5W8McEWKfsm2QZHi3ish4F46RIE_5lU_7QK6Q_ORxhmVVfH2QAzVfFFC33rMDfvVazSAYYisX6Sb0CeF7xJOntWpdOLdJ9DC1qyuWakku7I109kGYlswEZ1bEoi3NNcr6qbxkgJEIuJi_BTPy1o9-wMa4p5jY">
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-tertiary">Tez-kunda jonli dars</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="font-headline-md text-lg text-on-surface mb-1">Sun'iy Intelekt asoslari</h3>
+<p class="text-sm text-on-surface-variant mb-4 flex-1">Kirish, mashinali o'rganish va neyron tarmoqlar bo'yicha boshlang'ich tushunchalar.</p>
+<div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/50">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+                                        145 o'quvchi
+                                    </div>
+<div class="flex items-center gap-1 text-sm font-medium text-on-surface">
+<span class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<span class="block h-full bg-tertiary w-[65%] rounded-full"></span>
+</span>
+                                        65%
+                                    </div>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden hover:shadow-md transition-all group flex flex-col border-t-4 border-t-primary">
+<div class="h-32 bg-surface-container relative">
+<img alt="Web Dev Course" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A clean, modern workspace focused on web development. A sleek laptop sits on a light wooden desk, displaying lines of colorful code. Soft natural light streams in from a nearby window, creating a bright, optimistic light-mode atmosphere. The color scheme is dominated by clean whites, soft warm wood tones, and sharp, vibrant primary blue accents on the screen. The scene conveys focus and modern digital craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm0_YfpR23gfC3D9xkeGhy5c7A1JgGslJb4ceXVA0qQ9P0ueD7ZKEpRf2xFxvCuRX9ZNajXQo7mkr7POHwXCh-butefJiVA6xlpDLnkLKRVFxOqE5wdWfDHz54KJ1dgREeXdYX34JS5SW4dgA9fP7sxb5G7PtJevyil_YjlHSRxAza0eAb11PVzaNDFFkYI_0UZg6hbUHSLMDjBJlA__FisFKYSJzkHZ804t1OZRYbTQuflMogtjOMDC2h0uobRUW4vaaIkosBGDA">
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="font-headline-md text-lg text-on-surface mb-1">Web Dasturlash (Frontend)</h3>
+<p class="text-sm text-on-surface-variant mb-4 flex-1">HTML, CSS, va JavaScript yordamida zamonaviy interfeyslar yaratish.</p>
+<div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/50">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+                                        320 o'quvchi
+                                    </div>
+<div class="flex items-center gap-1 text-sm font-medium text-on-surface">
+<span class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<span class="block h-full bg-primary w-[82%] rounded-full"></span>
+</span>
+                                        82%
+                                    </div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden hover:shadow-md transition-all group flex flex-col border-t-4 border-t-secondary">
+<div class="h-32 bg-surface-container relative">
+<img alt="Data Science Course" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm0_YfpR23gfC3D9xkeGhy5c7A1JgGslJb4ceXVA0qQ9P0ueD7ZKEpRf2xFxvCuRX9ZNajXQo7mkr7POHwXCh-butefJiVA6xlpDLnkLKRVFxOqE5wdWfDHz54KJ1dgREeXdYX34JS5SW4dgA9fP7sxb5G7PtJevyil_YjlHSRxAza0eAb11PVzaNDFFkYI_0UZg6hbUHSLMDjBJlA__FisFKYSJzkHZ804t1OZRYbTQuflMogtjOMDC2h0uobRUW4vaaIkosBGDA">
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-secondary">Yangi kurs</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="font-headline-md text-lg text-on-surface mb-1">Data Science va Python</h3>
+<p class="text-sm text-on-surface-variant mb-4 flex-1">Ma'lumotlarni tahlil qilish, vizualizatsiya va statistik modellashtirish asoslari.</p>
+<div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/50">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+210 o'quvchi
+</div>
+<div class="flex items-center gap-1 text-sm font-medium text-on-surface">
+<span class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<span class="block h-full bg-secondary w-[45%] rounded-full"></span>
+</span>
+45%
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden hover:shadow-md transition-all group flex flex-col border-t-4 border-t-tertiary-container">
+<div class="h-32 bg-surface-container relative">
+<img alt="UI UX Course" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA20V22T5ZyRSqTcWRgxUvbICbjTMh_4ZkwhEtdMxE0togHbnILzbu3ratgpW0x7i_qSUuXPekit4lpqG5CcTVf4NxkScn21bv0tFFYCIWJDoLMIy5W8McEWKfsm2QZHi3ish4F46RIE_5lU_7QK6Q_ORxhmVVfH2QAzVfFFC33rMDfvVazSAYYisX6Sb0CeF7xJOntWpdOLdJ9DC1qyuWakku7I109kGYlswEZ1bEoi3NNcr6qbxkgJEIuJi_BTPy1o9-wMa4p5jY">
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-tertiary-container">Trendda</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="font-headline-md text-lg text-on-surface mb-1">UI/UX Dizayn Masterklass</h3>
+<p class="text-sm text-on-surface-variant mb-4 flex-1">Foydalanuvchi interfeyslari va tajribasini loyihalashning zamonaviy usullari.</p>
+<div class="flex items-center justify-between mt-auto pt-3 border-t border-outline-variant/50">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+185 o'quvchi
+</div>
+<div class="flex items-center gap-1 text-sm font-medium text-on-surface">
+<span class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<span class="block h-full bg-tertiary-container w-[30%] rounded-full"></span>
+</span>
+30%
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<!-- Activity / Side Column -->
+<section class="flex flex-col gap-4">
+<h2 class="text-headline-md font-headline-md text-on-surface">So'nggi faolliklar</h2>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-4 flex flex-col gap-4">
+<!-- Activity Item 1 -->
+<div class="flex gap-3 items-start pb-4 border-b border-outline-variant/50 last:border-0 last:pb-0">
+<div class="size-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">assignment_turned_in</span>
+</div>
+<div>
+<p class="text-sm text-on-surface"><span class="font-medium">Aziza Qodirova</span> "CSS Flexbox" vazifasini topshirdi.</p>
+<p class="text-xs text-on-surface-variant mt-1">10 daqiqa oldin</p>
+</div>
+<button class="ml-auto text-primary hover:bg-surface-container p-1 rounded transition-colors text-xs font-medium">Ko'rish</button>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-3 items-start pb-4 border-b border-outline-variant/50 last:border-0 last:pb-0">
+<div class="size-8 rounded-full bg-error-container flex items-center justify-center text-on-error-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">help_outline</span>
+</div>
+<div>
+<p class="text-sm text-on-surface"><span class="font-medium">Javohir T.</span> forumda yangi savol qoldirdi: "Neyron tarmoqlar o'qitishda xatolik".</p>
+<p class="text-xs text-on-surface-variant mt-1">1 soat oldin</p>
+</div>
+<button class="ml-auto text-primary hover:bg-surface-container p-1 rounded transition-colors text-xs font-medium">Javob</button>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-3 items-start pb-4 border-b border-outline-variant/50 last:border-0 last:pb-0">
+<div class="size-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">military_tech</span>
+</div>
+<div>
+<p class="text-sm text-on-surface"><span class="font-medium">Web Dasturlash</span> kursida 5 nafar o'quvchi sertifikat oldi.</p>
+<p class="text-xs text-on-surface-variant mt-1">Bugun, 09:30</p>
+</div>
+</div>
+</div>
+<!-- Mini Calendar/Tasks Widget -->
+<div class="bg-surface-container-highest rounded-xl p-4 mt-2 border border-outline-variant/50 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-32 h-32 bg-primary-container opacity-5 rounded-bl-full"></div>
+<h3 class="font-headline-md text-base text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event</span>
+                              Bugungi rejalar
+                          </h3>
+<ul class="space-y-2 relative z-10">
+<li class="flex items-center gap-2 text-sm text-on-surface bg-surface-container-lowest p-2 rounded-lg shadow-sm">
+<span class="size-2 rounded-full bg-tertiary shrink-0"></span>
+<span class="flex-1 truncate">14:00 - Jonli efir (AI asoslari)</span>
+</li>
+<li class="flex items-center gap-2 text-sm text-on-surface bg-surface-container-lowest p-2 rounded-lg shadow-sm">
+<span class="size-2 rounded-full bg-error shrink-0"></span>
+<span class="flex-1 truncate">16:30 - Vazifalarni tekshirish</span>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</div>
+</main>
+
+
+<script src="app.js"></script></body></html>
+

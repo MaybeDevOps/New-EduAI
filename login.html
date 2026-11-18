@@ -1,0 +1,478 @@
+﻿<!-- Edu_AI - Tizimga kirish (To'liq ekran va Animatsiya) -->
+<!DOCTYPE html>
+
+<html lang="uz"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tizimga kirish - Edu_AI</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config based on Design System -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#27313f",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-tertiary-fixed": "#00201d",
+                        "secondary": "#712ae2",
+                        "surface-tint": "#1353d8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#d4dcff",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#121c2a",
+                        "outline-variant": "#c3c5d7",
+                        "surface-variant": "#d9e3f6",
+                        "primary-container": "#1a56db",
+                        "on-secondary-fixed": "#25005a",
+                        "on-surface": "#121c2a",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#eaddff",
+                        "secondary-container": "#8a4cfc",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "inverse-primary": "#b5c4ff",
+                        "primary": "#003fb1",
+                        "on-primary-fixed": "#00174d",
+                        "surface-container": "#e6eeff",
+                        "tertiary": "#00544c",
+                        "on-tertiary-container": "#84f0e2",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d0dbed",
+                        "surface-container-low": "#eff4ff",
+                        "outline": "#737686",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#003dab",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-surface-variant": "#434654",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dee9fc",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#006e65",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "tertiary-fixed": "#89f5e7",
+                        "surface": "#f8f9ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Minimal custom styles for things tailwind struggles with inline */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        /* Animation Classes */
+        .fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            position: absolute;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            position: relative;
+            visibility: visible;
+            transition: all 0.4s ease-in-out 0.2s;
+        }
+        
+        .slide-up {
+            transform: translateY(-20px);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        #login-form-container {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            display: none;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        #login-form-container.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            display: block;
+        }
+
+        /* Welcome Overlay Styles */
+        #welcome-overlay {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 9999;
+            transform: scale(1.1);
+        }
+        
+        #welcome-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+
+        .pulse-text {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float-up 3s ease-out forwards;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased relative bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0gVKNro1Zq82toK--Juq9fuKUSF2awbkywj-DN2LRWaKNIYg7q9KliFqDihnBseuUfdqWnwDSee-CyLKj6TF-SF4N8OkbyiC8RT2t6Y1-HKKPIcDXO48unmb_l2y5SAqi2JtGBfNWMD8nhiHw_rWJe3qUGv1L7oIji3WVN1azzNbXXRHZup5Vab6qt3HyL21cGm80Vayh0L3wThaxL33A599sqxX4WEujwrhZLen_NaElowzPJE2XwyJJarvJdgw2SQM5tlxTYIY');">
+<!-- Background Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary-container/90 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-sm"></div>
+<!-- Welcome Overlay -->
+<div class="fixed inset-0 bg-gradient-to-br from-primary-container via-surface to-secondary-container flex flex-col items-center justify-center overflow-hidden" id="welcome-overlay">
+<div class="relative z-10 text-center">
+<span class="material-symbols-outlined text-[64px] text-primary mb-4 animate-bounce" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h2 class="font-display-lg text-display-lg text-on-surface pulse-text" id="welcome-message">Xush kelibsiz!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">Tizimga kirilmoqda...</p>
+</div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 w-full min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Brand / Header -->
+<div class="text-center mb-8">
+<a class="inline-flex items-center justify-center gap-2 text-on-primary hover:opacity-80 transition-opacity mb-2" href="#">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-headline-lg text-headline-lg font-bold tracking-tight">Edu_AI</span>
+</a>
+<h1 class="font-display-lg text-display-lg text-on-primary hidden md:block mt-2">Sizning o'quv olamingiz.</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 mt-2 max-w-xl mx-auto hidden md:block">
+                Barcha imkoniyatlarni kashf eting. O'rganish, o'rgatish va boshqarish uchun yagona zamonaviy platforma.
+            </p>
+</div>
+<!-- Login Card -->
+<div class="w-full max-w-md bg-surface p-6 md:p-10 rounded-2xl shadow-2xl relative">
+<!-- Main Back Button -->
+<div class="absolute top-6 left-6" id="main-back-btn">
+<a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md group" href="#">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Ortga
+                </a>
+</div>
+<!-- Form Back Button (Hidden initially) -->
+<div class="absolute top-6 left-6 hidden" id="form-back-btn">
+<button class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md group" onclick="resetView()">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Ortga
+                </button>
+</div>
+<!-- Role Selection Content -->
+<div class="w-full mt-10 relative" id="role-container">
+<!-- Header -->
+<div class="text-center mb-8 transition-all duration-300" id="selection-header">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-2">Tizimga kirish</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Davom etish uchun o'z rolingizni tanlang.
+                    </p>
+</div>
+<!-- Role Cards Container -->
+<div class="flex flex-col gap-4 relative" id="cards-wrapper">
+<!-- Student Card -->
+<div class="role-card-wrapper transition-all duration-500 ease-in-out w-full" data-role="student">
+<button class="w-full text-left p-4 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-primary hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group flex items-center gap-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent role-btn" onclick="selectRole('student', this)">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary text-primary transition-colors duration-200 icon-bg">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg md:text-headline-md text-on-surface mb-1 group-hover:text-primary transition-colors role-title">Talaba</h3>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 role-desc">
+                                    O'quv materiallariga kirish, kurslarni o'rganish.
+                                </p>
+</div>
+<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity chevron-icon">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</button>
+</div>
+<!-- Teacher Card -->
+<div class="role-card-wrapper transition-all duration-500 ease-in-out w-full" data-role="teacher">
+<button class="w-full text-left p-4 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-secondary hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group flex items-center gap-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent role-btn" onclick="selectRole('teacher', this)">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary text-secondary transition-colors duration-200 icon-bg">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">local_library</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg md:text-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors role-title">O'qituvchi</h3>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 role-desc">
+                                    Darslarni boshqarish, guruhlar tashkil etish.
+                                </p>
+</div>
+<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity chevron-icon">
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</div>
+</button>
+</div>
+<!-- Admin Card -->
+<div class="role-card-wrapper transition-all duration-500 ease-in-out w-full" data-role="admin">
+<button class="w-full text-left p-4 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-tertiary hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group flex items-center gap-4 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent role-btn" onclick="selectRole('admin', this)">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center group-hover:bg-tertiary group-hover:text-on-tertiary text-tertiary transition-colors duration-200 icon-bg">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg md:text-headline-md text-on-surface mb-1 group-hover:text-tertiary transition-colors role-title">Administrator</h3>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 role-desc">
+                                    Tizim sozlamalari, foydalanuvchilar boshqaruvi.
+                                </p>
+</div>
+<div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity chevron-icon">
+<span class="material-symbols-outlined text-tertiary">chevron_right</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Login Form (Hidden initially) -->
+<div class="mt-6" id="login-form-container">
+<form class="space-y-4" onsubmit="handleLogin(event)">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="username">Foydalanuvchi nomi</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" id="username" placeholder="Foydalanuvchi nomini kiriting" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="password">Parol</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" id="password" placeholder="Parolni kiriting" required="" type="password"/>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary focus:ring-primary border-outline-variant rounded" id="remember-me" type="checkbox"/>
+<label class="ml-2 block font-body-md text-label-md text-on-surface-variant" for="remember-me">
+                                    Eslab qolish
+                                </label>
+</div>
+<div class="text-sm">
+<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">
+                                    Parolni unutdingizmi?
+                                </a>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary hover:bg-primary-container focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors" id="submit-btn" type="submit">
+                                Tizimga kirish
+                            </button>
+</div>
+</form>
+</div>
+<!-- Help Link -->
+<div class="mt-6 text-center transition-all duration-300" id="help-link">
+<a class="font-body-md text-label-md text-on-surface-variant hover:text-primary underline decoration-outline-variant hover:decoration-primary transition-colors" href="#">
+                        Tizimga kirishda muammo bormi?
+                    </a>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function selectRole(role, btnElement) {
+        const wrappers = document.querySelectorAll('.role-card-wrapper');
+        const header = document.getElementById('selection-header');
+        const helpLink = document.getElementById('help-link');
+        const formContainer = document.getElementById('login-form-container');
+        const mainBackBtn = document.getElementById('main-back-btn');
+        const formBackBtn = document.getElementById('form-back-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        // Hide header and help link
+        header.classList.add('fade-out');
+        helpLink.classList.add('fade-out');
+        
+        // Toggle back buttons
+        mainBackBtn.classList.add('hidden');
+        formBackBtn.classList.remove('hidden');
+        
+        // Customize form button color based on role
+        submitBtn.className = `w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors`;
+        
+        if(role === 'student') {
+            submitBtn.classList.add('bg-primary', 'hover:bg-primary-container', 'focus:ring-primary');
+        } else if (role === 'teacher') {
+            submitBtn.classList.add('bg-secondary', 'hover:bg-secondary', 'focus:ring-secondary');
+        } else if (role === 'admin') {
+            submitBtn.classList.add('bg-tertiary', 'hover:bg-tertiary', 'focus:ring-tertiary');
+        }
+
+        wrappers.forEach(wrapper => {
+            if (wrapper.dataset.role !== role) {
+                // Fade out unselected cards
+                wrapper.classList.add('fade-out');
+                wrapper.classList.remove('relative');
+            } else {
+                // Style selected card to look "locked in"
+                const btn = wrapper.querySelector('.role-btn');
+                btn.classList.add('cursor-default', 'shadow-md');
+                btn.classList.remove('hover:-translate-y-0.5', 'hover:shadow-md');
+                wrapper.querySelector('.chevron-icon').style.display = 'none';
+                
+                // Keep it in flow but slide it up visually
+                wrapper.classList.add('slide-up');
+            }
+        });
+
+        // Show form after a short delay
+        setTimeout(() => {
+            formContainer.classList.add('active');
+        }, 300);
+    }
+
+    function resetView() {
+        const wrappers = document.querySelectorAll('.role-card-wrapper');
+        const header = document.getElementById('selection-header');
+        const helpLink = document.getElementById('help-link');
+        const formContainer = document.getElementById('login-form-container');
+        const mainBackBtn = document.getElementById('main-back-btn');
+        const formBackBtn = document.getElementById('form-back-btn');
+
+        // Hide form
+        formContainer.classList.remove('active');
+        
+        // Toggle back buttons
+        formBackBtn.classList.add('hidden');
+        mainBackBtn.classList.remove('hidden');
+
+        setTimeout(() => {
+            // Show header and help link
+            header.classList.remove('fade-out');
+            helpLink.classList.remove('fade-out');
+
+            wrappers.forEach(wrapper => {
+                // Reset selected card styling
+                const btn = wrapper.querySelector('.role-btn');
+                btn.classList.remove('cursor-default', 'shadow-md');
+                btn.classList.add('hover:-translate-y-0.5', 'hover:shadow-md');
+                wrapper.querySelector('.chevron-icon').style.display = '';
+                
+                // Reset positioning and visibility
+                wrapper.classList.remove('fade-out', 'slide-up');
+                wrapper.classList.add('relative');
+            });
+        }, 300);
+    }
+
+    function createParticles() {
+        const overlay = document.getElementById('welcome-overlay');
+        const colors = ['#003fb1', '#712ae2', '#00544c', '#89f5e7', '#b5c4ff'];
+        
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const size = Math.random() * 10 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            
+            const duration = Math.random() * 2 + 2;
+            particle.style.animationDuration = `${duration}s`;
+            
+            overlay.appendChild(particle);
+        }
+    }
+
+    function handleLogin(e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const overlay = document.getElementById('welcome-overlay');
+        const welcomeMessage = document.getElementById('welcome-message');
+        
+        // Update welcome message
+        welcomeMessage.textContent = `Xush kelibsiz, ${username || 'Foydalanuvchi'}!`;
+        
+        // Show overlay
+        overlay.classList.add('active');
+        
+        // Create particles
+        createParticles();
+        
+        // Simulate login delay
+        setTimeout(() => {
+            overlay.classList.remove('active');
+            // Clean up particles
+            setTimeout(() => {
+                const particles = document.querySelectorAll('.particle');
+                particles.forEach(p => p.remove());
+            }, 500);
+            
+            // In a real app, this is where navigation would happen
+            // alert("Tizimga kiritildi (Demo muvaffaqiyatli)");
+        }, 3000);
+    }
+</script>
+<script src="app.js"></script></body></html>

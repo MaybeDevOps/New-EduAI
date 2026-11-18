@@ -1,0 +1,277 @@
+﻿<!-- Edu_AI - O'quvchi: O'quv Yo'li -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Learning Path - Edu_AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdf9d",
+                        "surface-container-high": "#e8e7ee",
+                        "on-tertiary-fixed-variant": "#5b4300",
+                        "on-background": "#1a1b20",
+                        "secondary-container": "#c9d7fe",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#6991e8",
+                        "surface-container": "#ededf4",
+                        "surface-container-low": "#f3f3fa",
+                        "secondary-fixed": "#d9e2ff",
+                        "inverse-on-surface": "#f0f0f7",
+                        "surface-tint": "#2f5baf",
+                        "on-primary-fixed": "#001944",
+                        "on-primary-container": "#002964",
+                        "on-tertiary-fixed": "#251a00",
+                        "inverse-primary": "#afc6ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#ba8c00",
+                        "outline-variant": "#c3c6d3",
+                        "on-secondary-container": "#4f5d7e",
+                        "tertiary": "#785a00",
+                        "secondary-fixed-dim": "#b8c6ed",
+                        "tertiary-fixed-dim": "#f3bf40",
+                        "outline": "#737783",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#505e80",
+                        "on-primary-fixed-variant": "#0b4396",
+                        "primary": "#2f5baf",
+                        "on-tertiary-container": "#3a2900",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "on-surface": "#1a1b20",
+                        "surface-container-highest": "#e2e2e9",
+                        "on-secondary-fixed": "#0b1b39",
+                        "background": "#f9f9ff",
+                        "primary-fixed": "#d9e2ff",
+                        "surface-variant": "#e2e2e9",
+                        "inverse-surface": "#2f3035",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#434752",
+                        "surface-dim": "#d9d9e0",
+                        "on-secondary-fixed-variant": "#384667"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xl": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "button": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "button": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #2f5baf 0%, #2f5baf 50%, #e2e2e9 50%, #e2e2e9 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 bg-surface dark:bg-on-background shadow-sm w-full sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Edu_AI</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-outline-variant cursor-pointer hover:text-primary dark:hover:text-primary-fixed transition-colors">notifications</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a young student against a clean, light-mode background. The lighting is soft and flattering. The student is smiling gently, conveying approachability and focus. The overall aesthetic is clean, corporate, and modern, aligning with an educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGkTiV14NrXf2VKiv5FpKsYAcLaNHgz9k5Cs4RTQrhImjFAH5TOLjxXEKGWiTlrijXKZqdIJ7FzSnWXiKYJyD19hHYJGJnu6oa_RKe9abK4m-d0e7UgzRQjK5msgqwhUGZ8mULBQYv62tM2Qk-FHj7dxPtgYFq0B-wSnyprvLCLd0Si682qNM_h2KuyYk50XMDKN6gA1OxoJ-E8AuxWuxx5JpQtYO7pY9s4zpT26D37onvRd_ntg3-5ThSyGtQSEw0ZTmkFV4wTm8">
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-64 bg-surface-container-low dark:bg-on-background shadow-md sticky top-0 p-4 gap-2 flex-shrink-0 z-40"><div class="flex items-center gap-3 mb-8 px-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-headline-sm">EA</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Edu_AI</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Your Learning World</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 hover:bg-surface-variant rounded-xl transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Asosiy</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 hover:bg-surface-variant rounded-xl transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-lg text-label-lg">Mening Kurslarim</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-xl p-3 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">psychology</span>
+<span class="font-label-lg text-label-lg font-bold">O'quv yo'li</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 hover:bg-surface-variant rounded-xl transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-lg text-label-lg">Natijalarim</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 hover:bg-surface-variant rounded-xl transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-lg text-label-lg">Community</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 hover:bg-surface-variant rounded-xl transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+</div>
+<button class="mt-auto bg-primary text-on-primary py-3 px-4 rounded-xl font-button text-button hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">smart_toy</span>
+            AI Tutor
+        </button></nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Desktop Top App Bar Area (Search/Profile) -->
+<div class="hidden md:flex justify-between items-center px-gutter py-4 bg-surface dark:bg-on-background shadow-sm w-full sticky top-0 z-30">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search courses, skills..." type="text">
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<img alt="User profile" class="w-10 h-10 rounded-full border-2 border-outline-variant object-cover cursor-pointer hover:border-primary transition-colors shadow-sm" data-alt="A professional headshot of a young student against a clean, light-mode background. The lighting is soft and flattering. The student is smiling gently, conveying approachability and focus. The overall aesthetic is clean, corporate, and modern, aligning with an educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1r9S3WLyYckKc0JJ6gI2USEeSfmpwb8NFWjJ-UFJSP-Dxuacix2q_AEpTWaPLCoJwoojmOLHWOOA3SbyWlFflobUpju7Ut3UloDHMAvibY8L9oUCJpNsbE8UQZD0An0Acm34d90iaNptuTf2PfQUI8xppJyFtKg1p_bvMqj-DVVR_HHcLNJDz-ZPXgV3_Y23vnq6Esa5awj4pgLfji8jZt1DMjtmQGtHrQLmocG8MvObmiN3SFX2oyf4SIvcluzSdjvya3Hhz-IA">
+</div>
+</div>
+<div class="flex-1 p-margin-mobile md:p-gutter max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-8">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">UI/UX Designer Path</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your roadmap from beginner to professional product designer.</p>
+</div>
+<!-- Path Progress Overview -->
+<div class="bg-surface rounded-xl p-md shadow-sm border border-surface-variant mb-xl">
+<div class="flex justify-between items-end mb-4">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Overall Progress</span>
+<div class="font-headline-md text-headline-md text-primary mt-1">45%</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Est. completion: 3 Months</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<!-- Vertical Timeline -->
+<div class="relative max-w-3xl mx-auto pl-4 md:pl-0">
+<!-- Center Line (Desktop) / Left Line (Mobile) -->
+<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-surface-variant md:-ml-0.5 rounded-full">
+<div class="absolute top-0 w-full bg-primary rounded-full h-1/2 transition-all duration-1000 ease-in-out"></div>
+</div>
+<!-- Milestone 1: Completed -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-xl w-full">
+<div class="md:w-5/12 flex justify-start md:justify-end w-full pl-12 md:pl-0 pr-0 md:pr-8 mb-4 md:mb-0">
+<div class="bg-surface p-md rounded-xl shadow-sm border border-surface-variant border-t-4 border-t-tertiary-fixed-dim w-full hover:shadow-md transition-shadow">
+<div class="flex items-center gap-2 mb-2 text-tertiary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">Completed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Design Fundamentals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Color theory, typography, and layout principles.</p>
+<button class="text-primary font-button text-sm hover:underline flex items-center gap-1">
+                                Review Module <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-primary border-4 border-surface shadow-sm flex items-center justify-center -ml-4 transform transition-transform hover:scale-110 z-10">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">done</span>
+</div>
+<div class="md:w-5/12 w-full hidden md:block"></div>
+</div>
+<!-- Milestone 2: Current (Active) -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-xl w-full">
+<div class="md:w-5/12 w-full hidden md:block"></div>
+<div class="absolute left-4 md:left-1/2 w-10 h-10 rounded-full bg-surface border-4 border-primary shadow-md flex items-center justify-center -ml-5 transform transition-transform hover:scale-110 z-10 animate-pulse">
+<div class="w-3 h-3 bg-primary rounded-full"></div>
+</div>
+<div class="md:w-5/12 flex justify-start w-full pl-12 md:pl-8 pr-0">
+<div class="bg-primary-fixed p-md rounded-xl shadow-md border border-primary-fixed-dim w-full relative overflow-hidden">
+<!-- Subtle Background Accent -->
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-primary opacity-10 rounded-full blur-xl"></div>
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm animate-spin" style="animation-duration: 3s;">play_circle</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">In Progress вЂў Lesson 4/12</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-primary-container mb-1">Wireframing &amp; Prototyping</h3>
+<p class="font-body-sm text-body-sm text-on-secondary-container mb-4">Creating low-fidelity mockups and interactive flows.</p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-4">
+<div class="bg-primary h-1.5 rounded-full" style="width: 33%"></div>
+</div>
+<button class="w-full py-2 bg-primary text-on-primary font-button text-sm rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm flex justify-center items-center gap-2">
+                                Continue Learning
+                            </button>
+</div>
+</div>
+</div>
+<!-- Milestone 3: Upcoming -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-xl w-full opacity-70 hover:opacity-100 transition-opacity">
+<div class="md:w-5/12 flex justify-start md:justify-end w-full pl-12 md:pl-0 pr-0 md:pr-8 mb-4 md:mb-0">
+<div class="bg-surface p-md rounded-xl shadow-sm border border-surface-variant w-full">
+<div class="flex items-center gap-2 mb-2 text-outline">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="font-label-sm text-xs font-bold uppercase tracking-wider">Upcoming</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">User Research</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Conducting interviews and creating user personas.</p>
+</div>
+</div>
+<div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-surface border-4 border-outline-variant shadow-sm flex items-center justify-center -ml-4 z-10">
+<span class="material-symbols-outlined text-outline text-sm">lock</span>
+</div>
+<div class="md:w-5/12 w-full hidden md:block"></div>
+</div>
+</div>
+</div>
+</main>
+
+
+<script src="app.js"></script></body></html>
+
